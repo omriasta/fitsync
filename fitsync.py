@@ -145,7 +145,7 @@ def main():
     googleClient.users().dataSources().get(
       userId='me',
       dataSourceId=dataSourceId).execute()
-  except HttpError, error:
+  except HttpError as error:
     if not 'DataSourceId not found' in str(error):
       raise error
     # Doesn't exist, so create it.
